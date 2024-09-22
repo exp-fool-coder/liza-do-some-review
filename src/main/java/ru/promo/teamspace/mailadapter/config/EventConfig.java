@@ -27,7 +27,7 @@ public class EventConfig {
         var executor = eventProcessors.stream()
                 .collect(Collectors.toMap(EventMapper::getChannel, Function.identity(),
                         (v1, v2) -> {
-                            throw new IllegalStateException("Duplicate prize executor");
+                            throw new IllegalStateException("Ops");
                         }, () -> new EnumMap<>(ChannelEvent.class)));
         return executor;
     }
